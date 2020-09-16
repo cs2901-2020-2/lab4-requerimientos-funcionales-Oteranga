@@ -11,6 +11,7 @@ public class  DNASequencer {
     }
 
     public String calculate(List<String> part){
+
         return "AGATTACAGA";
     }
 }
