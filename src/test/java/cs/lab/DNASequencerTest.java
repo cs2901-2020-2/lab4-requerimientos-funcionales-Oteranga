@@ -16,12 +16,12 @@ public class DNASequencerTest {
         generic(0);
     }
 
-    @Test(expectedExceptions = tooManySubseqsEx.class)
+    @Test(expectedExceptions = muchsubEx.class)
     public void testCase1() throws Exception {
         generic(2);
     }
 
-    @Test(expectedExceptions = tooLargeSubseqsEx.class)
+    @Test(expectedExceptions = largesubEx.class)
     public  void testCase2() throws Exception {
         generic(1);
     }
