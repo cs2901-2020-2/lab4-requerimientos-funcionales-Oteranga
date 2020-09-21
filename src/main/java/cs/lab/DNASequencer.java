@@ -22,9 +22,7 @@ public class  DNASequencer {
             }
         }
 
-        //String answer = "";
         StringBuilder answer = new StringBuilder();
-        //String subcadena = "";
         StringBuilder subcadena = new StringBuilder();
         int k = 0;
 
