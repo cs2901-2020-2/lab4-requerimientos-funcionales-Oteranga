@@ -22,24 +22,26 @@ public class  DNASequencer {
             }
         }
 
-        String answer = "";
-        String subcadena = "";
+        //String answer = "";
+        StringBuilder answer = new StringBuilder();
+        //String subcadena = "";
+        StringBuilder subcadena = new StringBuilder();
         int k = 0;
 
-        answer += parts.get(0);
+        answer.insert(0,parts.get(0));
 
         for(int i = 1; i < parts.size(); i++){
             for(int j = 0; j < answer.length(); j++){
                 if(answer.charAt(j) == parts.get(i).charAt(k)){
-                    subcadena += parts.get(i).charAt(k);
+                    subcadena.insert(0, parts.get(i).charAt(k));
                     k++;
                 }
             }
             k = 0;
-            answer += parts.get(i).substring(subcadena.length());
-            subcadena = "";
+            answer.insert(answer.length(), parts.get(i).substring(subcadena.length()));
+            subcadena.delete(0, subcadena.length());
         }
 
-        return answer;
+        return answer.toString();
     }
 }
