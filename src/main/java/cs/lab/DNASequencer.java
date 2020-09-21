@@ -10,23 +10,33 @@ public class  DNASequencer {
         logger.info("Starting sequencer...");
     }
 
-    public String calculate(List<String> part){
-        
+    public String calculate(List<String> parts) throws tooLargeSubseqsEx, tooManySubseqsEx{
+
+        if(parts.size() > 160000){
+            throw new tooManySubseqsEx("Too many subseqs");
+        }
+
+        for(String it : parts){
+            if(it.length() > 200){
+                throw new tooLargeSubseqsEx("Too large substring");
+            }
+        }
+
         String answer = "";
         String subcadena = "";
         int k = 0;
 
-        answer += part.get(0);
+        answer += parts.get(0);
 
-        for(int i = 1; i < part.size(); i++){
+        for(int i = 1; i < parts.size(); i++){
             for(int j = 0; j < answer.length(); j++){
-                if(answer.charAt(j) == part.get(i).charAt(k)){
-                    subcadena += part.get(i).charAt(k);
+                if(answer.charAt(j) == parts.get(i).charAt(k)){
+                    subcadena += parts.get(i).charAt(k);
                     k++;
                 }
             }
             k = 0;
-            answer += part.get(i).substring(subcadena.length(),part.get(i).length());
+            answer += parts.get(i).substring(subcadena.length());
             subcadena = "";
         }
 
