@@ -10,15 +10,15 @@ public class  DNASequencer {
         logger.info("Starting sequencer...");
     }
 
-    public String calculate(List<String> parts) throws largesubEx, muchsubEx{
+    public String calculate(List<String> parts) throws Largesubex, Muchsubex{
 
         if(parts.size() > 160000){
-            throw new muchsubEx("Too many subseqs");
+            throw new Muchsubex("Too many subseqs");
         }
 
         for(String it : parts){
             if(it.length() > 200){
-                throw new largesubEx("Too large substring");
+                throw new Largesubex("Too large substring");
             }
         }
 

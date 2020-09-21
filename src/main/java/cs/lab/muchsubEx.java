@@ -1,8 +1,8 @@
 package cs.lab;
 
-public class muchsubEx extends Exception{
+public class Muchsubex extends Exception{
 
-    public muchsubEx(String message){
+    public Muchsubex(String message){
         super(message);
     }
 }

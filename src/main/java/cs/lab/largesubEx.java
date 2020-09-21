@@ -1,8 +1,8 @@
 package cs.lab;
 
-public class largesubEx extends Exception{
+public class Largesubex extends Exception{
 
-    public largesubEx(String message){
+    public Largesubex(String message){
         super(message);
     }
 }
